@@ -1,4 +1,4 @@
-# Quasar App (quasarfarrel1)
+# Quasar App (tiket_bioskop)
 
 A Quasar Framework app
 
