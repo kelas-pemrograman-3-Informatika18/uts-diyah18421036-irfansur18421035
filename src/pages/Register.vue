@@ -1,10 +1,10 @@
 <template>
-  <q-page class="bg-grey-11">
+  <q-page class="bg-grey-10">
     <div class="row">
       <q-card class="fixed-center col-md-4 col-xs-12 bg-teal" flat>
         <q-card-section>
           <div class="text-h6 q-pb-md">
-            Halaman Login
+            Halaman Register
           </div>
           <q-form
             @submit="onSubmit"
@@ -18,6 +18,20 @@
               lazy-rules
               :rules="[ val => val && val.length > 0 || 'Masukkan Username']"
             />
+            <q-input
+              filled
+              v-model="namaLengkap"
+              label="Nama Lengkap Anda"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Masukkan Nama Lengkap']"
+            />
+            <q-input
+              filled
+              v-model="email"
+              label="Email Anda"
+              lazy-rules
+              :rules="[ val => val && val.length > 0 || 'Masukkan Email']"
+            />
 
             <q-input
               filled
@@ -30,8 +44,8 @@
               ]"
             />
             <div class="q-gutter-md">
-              <q-btn label="Login" type="submit" color="primary"/>
-              <q-btn label="Register" to="/register" flat color="red"/>
+              <q-btn label="Register" type="submit" color="primary"/>
+              <q-btn label="Login" to="/" flat color="red"/>
               <!--<q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />-->
             </div>
         </q-form>
@@ -45,23 +59,13 @@ export default {
   data () {
     return {
       username: null,
-      password: null
+      password: null,
+      namaLengkap: null,
+      email: null
     }
   },
   methods: {
     onSubmit () {
-      if (this.username === 'cinema' && this.password === '123') {
-        this.$q.notify({
-          type: 'positive',
-          message: 'Selamat! Anda Berhasil Login'
-        })
-        this.$router.push('/home')
-      } else {
-        this.$q.notify({
-          type: 'negative',
-          message: 'Gagal Login, Username/Password Anda Salah'
-        })
-      }
     },
     onReset () {
       this.username = null

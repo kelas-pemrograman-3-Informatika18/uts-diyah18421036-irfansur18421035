@@ -61,7 +61,12 @@ module.exports = function (ctx) {
         'QForm',
         'QInput',
         'QCard',
-        'QCardSection'
+        'QCardSection',
+        'QTable',
+        'QTh',
+        'QTr',
+        'QTd'
+        
       ],
 
       directives: [
@@ -165,7 +170,7 @@ module.exports = function (ctx) {
     // Full list of options: https://quasar.dev/quasar-cli/developing-cordova-apps/configuring-cordova
     cordova: {
       // noIosLegacyBuildFlag: true, // uncomment only if you know what you are doing
-      id: ''
+      id: 'org.cordova.quasar.app'
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/developing-capacitor-apps/configuring-capacitor
@@ -193,7 +198,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'quasarfarrel1'
+        appId: 'tiket_bioskop'
       },
 
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
